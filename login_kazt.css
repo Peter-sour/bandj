@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center ;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background:linear-gradient(to right, #ff5f6d, #ffc371);
+}
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: -1;
+}
+.login{
+    width: 300px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 10px 20px 20px rgba(13, 14, 70, 10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    animation: fadeIn 3s ease-in-out;
+}
+h2{
+    text-align: center;
+    font-size: 2em;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -5px black;
+    font-style: inherit;
+    font-weight: 700;
+    margin-bottom: 10%;
+    animation: spin 2s linear;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    position: relative;
+    border-bottom: 1px solid #0c0c0c;
+    box-sizing: border-box;
+    width: 400px;
+    margin: 15px 0;
+}
+.input label{
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.15s ease;
+    animation: right 4s ease-in-out;
+}
+.input input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: 0.15s ease;
+}
+.input input:focus + label,
+.input input:valid + label{
+    font-size: 0.9rem;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    top: 10px;
+    transform: translateY(-120%);
+}
+.forgot{
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+    margin: 15px 0 0;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.forgot label{
+    display: flex;
+    align-items: center;
+}
+.forgot label span{
+    margin-left: 9px ;
+}
+.login a{
+    text-decoration: underline;
+}
+button{
+    padding: 10px 20px;
+    background-color: blue;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    animation: wave 3s ease-in-out;
+
+}
+button:hover{
+    background-color: #3498db;
+}
+.sign{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+}
+#message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Sembunyikan pesan secara default */
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #cf1124;
+    border: 1px solid #f5c6cb;
+}
+@keyframes wave {
+    0%, 100% {
+      transform: scale(1);
+      background-color: #3498db;
+    }
+    50% {
+      transform: scale(1.1);
+      background-color: #ff5f6d;
+    }
+    25%{
+        background-color: #ffc371;
+  
+    }
+  }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-300px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes right {
+    0% {
+        transform: translateX(-50px);
+      }
+      50% {
+        transform: translateX(220px);
+        box-shadow: coral;
+      } 
+  }

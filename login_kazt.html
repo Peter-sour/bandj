@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_kazt.css">
+    <title>Halaman Login</title>
+</head>
+<body>
+    <div class="login">
+        <div class="box">
+            <h2>Kazzt Login</h2>
+            <form id="login" class="form">
+                <div class="input">
+                    <input type="text" id="username" required>
+                    <label for="username">User :</label>
+                </div>
+                <div class="input">
+                    <input type="email" id="email" required>
+                    <label for="email">Enter email :</label>
+                </div>
+                <div class="input">
+                    <input type="password" id="password" required>
+                    <label for="password">Enter password :</label>
+                </div>
+                <div class="input">
+                    <input type="password" id="confirm" required>
+                    <label for="password" >Confirm password :</label>
+                </div>
+                <div class="forgot">
+                    <label for="remember">
+                        <input type="checkbox" id="remember" name="remember" value="remember" required>
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit">Log in</button>
+                <div class="sign">
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <p id="message"></p>
+    <script>
+        document.getElementById('login').addEventListener('submit', function(event) {
+ event.preventDefault(); // Mencegah form dari pengiriman default
+
+ // Mengambil nilai input
+ const username = document.getElementById('username').value;
+ const password = document.getElementById('password').value;
+ const email = document.getElementById('email').value;
+ const confirm = document.getElementById('confirm').value;
+
+ const messageElement = document.getElementById('message');
+         
+         if (username === 'user' && password === 'pass' && email == 'malakulkabira@gmail.com' && confirm == "pass") {
+             messageElement.innerText = 'Login berhasil!';
+             messageElement.className = 'success'; 
+             messageElement.style.display = 'block'; 
+             setTimeout(() => {
+                 window.location.href = 'homeranda.html';
+             }, 1000);
+         } else {
+             messageElement.innerText = 'Username atau password salah.';
+             messageElement.className = 'error'; 
+             messageElement.style.display = 'block'; 
+         }
+     });
+ 
+ </script>
+</body>
+</html>
